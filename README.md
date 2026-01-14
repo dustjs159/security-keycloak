@@ -1,5 +1,12 @@
 # Keycloak 테스트 가이드
 
+## 설치
+```
+helm repo add codecentric https://codecentric.github.io/helm-charts
+
+helm install keycloak codecentric/keycloakx -n keycloak --version 7.1.6 -f ./values.yaml
+```
+
 ## 현재 상태
 - ✅ Minikube에 Keycloak 설치 완료
 - ✅ 웹 콘솔 접근 확인 (포트포워딩)
@@ -12,7 +19,7 @@
 #### 1.1 Admin Console 접근
 ```bash
 # 포트포워딩 확인
-kubectl port-forward svc/keycloak 8080:8080
+kubectl port-forward svc/keycloak-keycloakx-http 8080:8080
 
 # 브라우저에서 접근
 http://localhost:8080
